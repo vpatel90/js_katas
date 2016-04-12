@@ -7,6 +7,8 @@ var coinChanger = function (total) {
     var coins = [];
     var myTotal = total;
 
+    coins = find_quarters(myTotal,coins)
+    myTotal = total - sumArray(coins)
     coins = find_dimes(myTotal,coins)
     myTotal = total - sumArray(coins)
     coins = find_nickles(myTotal,coins)
@@ -46,6 +48,14 @@ var find_dimes = function (total, coins) {
   return coins
 };
 
+var find_quarters = function (total, coins) {
+  var totalCoins = Math.floor(total/25)
+  for (n = 0; n < totalCoins; n++) {
+    coins.push(25)
+  }
+  return coins
+};
+
 
 
 describe("Array", function() {
@@ -75,6 +85,22 @@ describe("Dimes", function() {
     it("should have 2 dimes", function() {
         var total = 20;
         var expected = [10,10];
+        assert.deepEqual(expected, coinChanger(total));
+    });
+});
+
+describe("quarters", function() {
+    it("should have 2 quarters", function() {
+        var total = 50;
+        var expected = [25,25];
+        assert.deepEqual(expected, coinChanger(total));
+    });
+});
+
+describe("all", function() {
+    it("should have 3 quarters 2 dimes and 4 pennies", function() {
+        var total = 99;
+        var expected = [25,25,25,10,10,1,1,1,1];
         assert.deepEqual(expected, coinChanger(total));
     });
 });
