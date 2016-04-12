@@ -7,53 +7,53 @@ var coinChanger = function (total) {
     var coins = [];
     var myTotal = total;
 
-    coins = find_quarters(myTotal,coins)
-    myTotal = total - sumArray(coins)
-    coins = find_dimes(myTotal,coins)
-    myTotal = total - sumArray(coins)
-    coins = find_nickles(myTotal,coins)
-    myTotal = total - sumArray(coins)
-    coins = find_pennies(myTotal, coins)
-    return coins
+    coins = find_quarters(myTotal,coins);
+    myTotal = total - sumArray(coins);
+    coins = find_dimes(myTotal,coins);
+    myTotal = total - sumArray(coins);
+    coins = find_nickles(myTotal,coins);
+    myTotal = total - sumArray(coins);
+    coins = find_pennies(myTotal, coins);
+    return coins;
 };
 
 var sumArray = function (array) {
-  var sum = 0
-  for (var i = 0; i < array.length; i++) {
-    sum = sum + array[i]
-  }
-  return sum
-}
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+        sum = sum + array[i];
+    }
+    return sum;
+};
 
 var find_pennies = function (total, coins) {
-  for (n = 0; n < total; n++) {
-    coins.push(1)
-  }
-  return coins
+    for (var n = 0; n < total; n++) {
+        coins.push(1);
+    }
+    return coins;
 };
 
 var find_nickles = function (total, coins) {
-  var totalCoins = Math.floor(total/5)
-  for (n = 0; n < totalCoins; n++) {
-    coins.push(5)
-  }
-  return coins
+    var totalCoins = Math.floor(total/5);
+    for (var n = 0; n < totalCoins; n++) {
+        coins.push(5);
+    }
+    return coins;
 };
 
 var find_dimes = function (total, coins) {
-  var totalCoins = Math.floor(total/10)
-  for (n = 0; n < totalCoins; n++) {
-    coins.push(10)
-  }
-  return coins
+    var totalCoins = Math.floor(total/10);
+    for (var n = 0; n < totalCoins; n++) {
+        coins.push(10);
+    }
+    return coins;
 };
 
 var find_quarters = function (total, coins) {
-  var totalCoins = Math.floor(total/25)
-  for (n = 0; n < totalCoins; n++) {
-    coins.push(25)
-  }
-  return coins
+    var totalCoins = Math.floor(total/25);
+    for (var n = 0; n < totalCoins; n++) {
+        coins.push(25);
+    }
+    return coins;
 };
 
 
