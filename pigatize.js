@@ -1,5 +1,5 @@
 var pigatize = function (text) {
-  if ( startsWithVowel(text) === true ) {
+  if ( startsWithVowel(text) ) {
     console.log(text + "way");
   } else {
     s = text[0];
@@ -9,10 +9,10 @@ var pigatize = function (text) {
 };
 
 var startsWithVowel = function (text) {
-  if ( text[0].search(/[aeiouAEIOU]/) < 0 ) {
-    return false;
-  } else {
+  if ( text.search(/[aeiouAEIOU]/) === 0 ) {
     return true;
+  } else {
+    return false;
   }
 };
 
