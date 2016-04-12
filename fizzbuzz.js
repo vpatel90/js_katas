@@ -8,9 +8,8 @@ var fizzBuzz = function (n) {
   } else {
     return n;
   }
-
 };
 
-for (var n = 1; n <= 100; n = n + 1 ) {
+for ( var n = 1; n <= 100; n = n + 1 ) {
   console.log(fizzBuzz(n));
 }
