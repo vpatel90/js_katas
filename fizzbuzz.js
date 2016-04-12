@@ -5,6 +5,8 @@ var fizzBuzz = function (n) {
     console.log("fizz");
   } else if ( n % 5 === 0 ) {
     console.log("buzz");
+  } else {
+    console.log(n);
   }
 
 };
@@ -12,3 +14,4 @@ var fizzBuzz = function (n) {
 fizzBuzz(15);
 fizzBuzz(3);
 fizzBuzz(5);
+fizzBuzz(4);
