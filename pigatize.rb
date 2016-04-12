@@ -8,14 +8,14 @@ def pigatize(text)
 end
 
 def starts_with_vowel?(text)
-  return false if text[0].scan(/[aeiou]/).empty?
+  return false if text[0].downcase.scan(/[aeiou]/).empty?
   return true
 end
 
 
 puts pigatize("hello")
 puts pigatize("world")
-puts pigatize("elephant")
+puts pigatize("Elephant")
 puts pigatize("apple")
 puts pigatize("potato")
 puts pigatize("sheep")
