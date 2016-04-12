@@ -1,17 +1,16 @@
 var fizzBuzz = function (n) {
   if ( n % 15 === 0 ) {
-    console.log("fizzbuzz");
+    return "fizzbuzz";
   } else if ( n % 3 === 0 ) {
-    console.log("fizz");
+    return "fizz";
   } else if ( n % 5 === 0 ) {
-    console.log("buzz");
+    return "buzz";
   } else {
-    console.log(n);
+    return n;
   }
 
 };
 
-fizzBuzz(15);
-fizzBuzz(3);
-fizzBuzz(5);
-fizzBuzz(4);
+for (var n = 1; n <= 100; n = n + 1 ) {
+  console.log(fizzBuzz(n));
+}
