@@ -1,11 +1,23 @@
-var chai = require('chai');
+/*global describe, it*/
+var chai = require("chai");
 
 var assert = chai.assert;
 
-describe('Array', function() {
-  it('should start empty', function() {
-    var arr = [];
+var coinChanger = function () {
 
-    assert.equal(arr.length, 0);
-  });
+};
+
+
+
+
+
+
+
+
+describe("Array", function() {
+    it("should start empty", function() {
+        var arr = [];
+
+        assert.equal(arr.length, 0);
+    });
 });
