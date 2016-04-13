@@ -3,36 +3,6 @@ var chai = require("chai");
 
 var assert = chai.assert;
 
-var coinChanger = function (total) {
-    var coins = [];
-    var myTotal = total;
-    var values = [25,10,5,1];
-
-    for (var i = 0; i < values.length; i++){
-        coins = find_coins(values[i], myTotal,coins);
-        myTotal = total - sumArray(coins);
-    }
-    return coins;
-};
-
-var find_coins = function(value, total, coins) {
-    var totalCoins = Math.floor(total/value);
-    for (var n = 0; n < totalCoins; n++) {
-        coins.push(value);
-    }
-    return coins;
-};
-
-var sumArray = function (array) {
-    var sum = 0;
-
-    for (var i = 0; i < array.length; i++) {
-        sum = sum + array[i];
-    }
-    return sum;
-};
-
-console.log(coinChanger(24));
 
 describe("Array", function() {
     it("should start empty", function() {
