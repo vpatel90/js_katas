@@ -6,14 +6,20 @@ var assert = chai.assert;
 var coinChanger = function (total) {
     var coins = [];
     var myTotal = total;
+    var values = [25,10,5,1];
 
-    coins = find_quarters(myTotal,coins);
-    myTotal = total - sumArray(coins);
-    coins = find_dimes(myTotal,coins);
-    myTotal = total - sumArray(coins);
-    coins = find_nickles(myTotal,coins);
-    myTotal = total - sumArray(coins);
-    coins = find_pennies(myTotal, coins);
+    for (var i = 0; i < values.length; i++){
+        coins = find_coins(values[i], myTotal,coins);
+        myTotal = total - sumArray(coins);
+    }
+    return coins;
+};
+
+var find_coins = function(value, total, coins) {
+    var totalCoins = Math.floor(total/value);
+    for (var n = 0; n < totalCoins; n++) {
+        coins.push(value);
+    }
     return coins;
 };
 
@@ -23,37 +29,6 @@ var sumArray = function (array) {
         sum = sum + array[i];
     }
     return sum;
-};
-
-var find_pennies = function (total, coins) {
-    for (var n = 0; n < total; n++) {
-        coins.push(1);
-    }
-    return coins;
-};
-
-var find_nickles = function (total, coins) {
-    var totalCoins = Math.floor(total/5);
-    for (var n = 0; n < totalCoins; n++) {
-        coins.push(5);
-    }
-    return coins;
-};
-
-var find_dimes = function (total, coins) {
-    var totalCoins = Math.floor(total/10);
-    for (var n = 0; n < totalCoins; n++) {
-        coins.push(10);
-    }
-    return coins;
-};
-
-var find_quarters = function (total, coins) {
-    var totalCoins = Math.floor(total/25);
-    for (var n = 0; n < totalCoins; n++) {
-        coins.push(25);
-    }
-    return coins;
 };
 
 
